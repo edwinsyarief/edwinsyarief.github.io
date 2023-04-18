@@ -1,76 +1,152 @@
-/* Custom styles for GitHub page */
-body {
+/* Reset some default styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
 }
 
+/* Set container max width and center it */
 .container {
-    max-width: 960px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Set header styles */
 .header {
-    background-color: #007bff;
+    background-color: #222;
     color: #fff;
     padding: 30px;
     text-align: center;
 }
 
 .header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 .header p {
     font-size: 18px;
+    margin-bottom: 40px;
 }
 
+/* Set navigation styles */
 .navbar {
-    background-color: #343a40;
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 20px;
 }
 
 .navbar a {
-    color: #fff;
-    padding: 10px;
+    color: #222;
     text-decoration: none;
+    font-size: 18px;
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    color: #007bff;
 }
 
-.card {
+/* Set hero section styles */
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card img {
-    max-height: 200px;
-    object-fit: cover;
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-.card-title {
-    font-size: 20px;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Set projects section styles */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.projects img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.projects h3 {
+    font-size: 24px;
     margin-top: 10px;
 }
 
-.card-text {
+.projects p {
     font-size: 16px;
+    margin-top: 5px;
 }
 
-.footer {
-    background-color: #343a40;
+/* Set contact section styles */
+.contact {
+    margin-bottom: 60px;
+}
+
+.contact form {
+    margin-top: 20px;
+}
+
+.contact label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
     color: #fff;
-    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
+/* Set footer styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
     text-align: center;
-}
-
-.footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
 }
