@@ -1,0 +1,76 @@
+/* Custom styles for GitHub page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+}
+
+.navbar {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,101 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>John Doe | .NET Developer</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-O+638x2lBbCU+vevIbxU+sc8+20MzJp+AkBvGAuU7hqSfGxhqWo9F93p3Hsz4SK84" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            text-align: center;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        h1 {
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-weight: 500;
-            margin-top: 0;
-        }
-
-        p {
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            background-color: #007bff;
-            color: #ffffff;
-            font-weight: 500;
-            border-radius: 30px;
-            padding: 12px 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Hi, I'm John Doe</h1>
-        <h2>.NET Developer</h2>
-        <p>I am a passionate .NET developer with over 5 years of experience. I specialize in building web
-            applications using the latest technologies and best practices.</p>
-        <a href="#portfolio" class="btn btn-primary">View My Portfolio</a>
-    </div>
-
-    <div class="container" id="portfolio">
-        <h2>My Portfolio</h2>
-        <p>Check out some of my recent projects:</p>
-        <ul>
-            <li>
-                <h3>Project 1</h3>
-                <p>Description of Project 1</p>
+    <header class="bg-primary text-white text-center py-5">
+        <h1>John Doe</h1>
+        <p class="lead">.NET Developer</p>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="mailto:john.doe@example.com" target="_blank" class="text-white">Email</a>
             </li>
-            <li>
-                <h3>Project 2</h3>
-                <p>Description of Project 2</p>
+            <li class="list-inline-item">
+                <a href="https://linkedin.com/in/johndoe" target="_blank" class="text-white">LinkedIn</a>
             </li>
-            <li>
-                <h3>Project 3</h3>
-                <p>Description of Project 3</p>
+            <li class="list-inline-item">
+                <a href="https://github.com/johndoe" target="_blank" class="text-white">GitHub</a>
             </li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Contact Me</a>
-    </div>
+    </header>
 
-    <div class="container" id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out to me for any inquiries or collaborations:</p>
+    <section class="container my-5">
+        <h2>About Me</h2>
+        <p class="lead">I am a highly skilled .NET developer with over 5 years of experience. I am passionate about
+            creating
+            innovative and efficient solutions using the latest technologies.</p>
+        <p>I have expertise in developing web applications using C#, ASP.NET, MVC, Web API, and front-end
+            technologies
+            such as HTML5, CSS3, JavaScript, and AngularJS. I am also experienced in working with databases like SQL
+            Server
+            and have a strong understanding of object-oriented programming (OOP) concepts and software development
+            methodologies.</p>
+        <p>I am a detail-oriented and collaborative team player, always striving for excellence in my work. I am
+            constantly learning and staying updated with the latest industry trends and technologies to deliver
+            cutting-edge solutions.</p>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Portfolio</h2>
+            <p class="lead">Check out some of my recent projects.</p>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="project1.jpg" alt="Project 1" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">A description of the project goes here. It can be brief or detailed,
+                                highlighting the technologies used, challenges faced, and solutions implemented.</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="project2.jpg" alt="Project 2" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">A description of the project goes here. It can be brief or detailed,
+                                highlighting the technologies used, challenges faced, and solutions implemented.</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="project3.jpg" alt="Project 3" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">A description of the project goes here. It can be brief or detailed,
+                                highlighting the technologies used, challenges faced, and solutions implemented.</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5">
+        <h2>Skills</h2>
+        <p class="lead">Here are some of the key skills I possess:</p>
         <ul>
-            <li>Email: john.doe@example.com</li>
-            <li>Phone: (123) 456-7890</li>
-            <li>GitHub: <a href="https://github.com/johndoe" target="_blank">https://github.com/johndoe</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">https://linkedin.com/in/johndoe</a>
-            </li>
+            <li>C#</li>
+            <li>ASP.NET</li>
+            <li>MVC</li>
+            <li>Web API</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>AngularJS</li>
+            <li>SQL Server</li>
+            <li>Object-Oriented Programming (OOP)</li>
+            <li>Software Development Methodologies</li>
         </ul>
-        <a href="#" class="btn btn-primary">Download Resume</a>
-    </div>
-    <footer class="container text-center">
-        <p>&copy; 2023 John Doe. All rights reserved.</p>
+    </section>
+
+    <footer class="text-center py-3">
+        <p>Contact me: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.8/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
