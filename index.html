@@ -1,111 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edwin Syarief - Fullstack & Game Dev Extraordinaire</title>
+    <!-- Devicon CDN for icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Font Awesome for mode toggle icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #0d0d2b 0%, #2b1d5b 100%);
+        color: #e0e0e0;
+        overflow-x: hidden;
+        position: relative;
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edwin Syarief | .NET Developer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+      /* Light Mode */
+      body.light {
+        background: linear-gradient(135deg, #e0e7ff 0%, #a3bffa 100%);
+        color: #1a1a1a;
+      }
 
-<body>
-    <header class="header bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Edwin Syarief</h1>
-            <p class="lead">.NET Developer</p>
-            <p>Passionate about building innovative web applications with C# and ASP.NET</p>
-        </div>
-    </header>
+      /* Background Animation (Gaming Particles) */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .particle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: #ff6b6b;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: float 10s infinite ease-in-out;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(100vh);
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(20px);
+          opacity: 0;
+        }
+      }
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 60px 0;
+        animation: fadeInDown 1s ease-out;
+      }
+      .profile-pic-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #ff6b6b;
+        background: url("profile.png") center/cover;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .profile-pic:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #ff6b6b;
+      }
+      h1 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 2.5em;
+        color: #ff6b6b;
+        text-shadow: 4px 4px #4ecdc4;
+      }
+      .tagline {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #45b7d1;
+      }
+
+      /* Navigation */
+      nav {
+        position: sticky;
+        top: 20px;
+        z-index: 100;
+      }
+      .mode-toggle {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #ff6b6b;
+        transition: transform 0.3s, color 0.3s;
+      }
+      .mode-toggle:hover {
+        transform: scale(1.3);
+        color: #4ecdc4;
+      }
+
+      /* Sections */
+      section {
+        margin: 60px 0;
+        padding: 40px;
+        background: rgba(20, 20, 40, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      body.light section {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        font-family: "Press Start 2P", cursive;
+        color: #4ecdc4;
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        text-shadow: 2px 2px #ff6b6b;
+        text-align: center;
+      }
+
+      /* About Me */
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      .about-text {
+        flex: 2;
+      }
+      .about-image {
+        flex: 1;
+        height: 200px;
+        background: url("screenshot.png") center/cover;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+      }
+      .about-image:hover {
+        transform: scale(1.05);
+      }
+
+      /* Skills */
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .skill-card {
+        width: 200px;
+        background: #ff6b6b;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+      .skill-card:hover {
+        transform: translateY(-10px) rotate(2deg);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      }
+      .skill-card i {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      /* Additional Skills */
+      .additional-skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      }
+      .additional-skills-grid i {
+        font-size: 48px;
+        color: #fff;
+      }
+      body.light .additional-skills-grid i {
+        color: #333;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .project-card {
+        background: #4ecdc4;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      }
+      .project-card a {
+        color: #ff6b6b;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+      .project-card a:hover {
+        color: #fff;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #aaa;
+      }
+      body.light footer {
+        color: #555;
+      }
+
+      /* Social Links */
+      .social-links {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+      .social-links a {
+        color: #ff6b6b;
+        font-size: 1.5em;
+        transition: transform 0.3s;
+      }
+      .social-links a:hover {
+        transform: scale(1.2);
+      }
+      body.light .social-links a {
+        color: #333;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .about-content {
+          flex-direction: column;
+        }
+        h1 {
+          font-size: 1.8em;
+        }
+        h2 {
+          font-size: 1.4em;
+        }
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <nav>
+      <i class="fas fa-moon mode-toggle" onclick="toggleDarkMode()"></i>
     </nav>
-
-    <section class="container my-5" id="about">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="profile.png" alt="Profile Picture" class="img-fluid rounded-circle">
-            </div>
-            <div class="col-md-6 mt-3">
-                <h2>About Me</h2>
-                <p class="lead">I am a skilled .NET Developer with over 10 years of experience in
-                    developing web applications using C# and ASP.NET. I am passionate about writing clean, efficient
-                    code and creating innovative solutions to complex problems.</p>
-                <p>I have a strong background in web development, including expertise in MVC architecture, Web API
-                    development, and database integration using SQL Server. I am also proficient in front-end
-                    technologies such as HTML5, CSS3, and JavaScript.</p>
-                <p>I am constantly expanding my skill set and keeping up-to-date with the latest industry trends and
-                    best practices. I am a team player with excellent communication and collaboration skills,
-                    dedicated to delivering high-quality results.</p>
-            </div>
+    <header>
+      <div class="profile-pic-container">
+        <div class="profile-pic"></div>
+      </div>
+      <h1>Edwin Syarief</h1>
+      <p class="tagline">
+        Fullstack & Game Developer | Code Wizard | Pixel Master
+      </p>
+    </header>
+    <div class="container">
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I am a skilled .NET Developer with over 10 years of experience in
+              developing web applications using C# and ASP.NET. I am passionate
+              about writing clean, efficient code and creating innovative
+              solutions to complex problems. I have a strong background in web
+              development, including expertise in MVC architecture, Web API
+              development, and database integration using SQL Server. I am also
+              proficient in front-end technologies such as HTML5, CSS3, and
+              JavaScript.
+            </p>
+            <p>
+              Additionally, I am an enthusiastic Game Developer, leveraging
+              Golang and Ebitengine to create engaging and interactive games. I
+              am constantly expanding my skill set and keeping up-to-date with
+              the latest industry trends and best practices. I am a team player
+              with excellent communication and collaboration skills, dedicated
+              to delivering high-quality results.
+            </p>
+          </div>
+          <div class="about-image"></div>
         </div>
-    </section>
-    
-    <section class="container my-5" id="skills">
-        <h2 class="text-center">Skills</h2>
-        <p class="lead text-center">I have expertise in the following technologies:</p>
-        <div class="row mt-4">
-            <div class="col-md-4 mt-3">
-                <h5 class="text-center">Front-end Development</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">HTML5</li>
-                    <li class="list-group-item">CSS3</li>
-                    <li class="list-group-item">JavaScript</li>
-                    <li class="list-group-item">Bootstrap</li>
-                    <li class="list-group-item">Angular</li>
-                    <li class="list-group-item">TypeScript</li>
-                </ul>
-            </div>
-            <div class="col-md-4 mt-3">
-                <h5 class="text-center">Back-end Development</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">C#</li>
-                    <li class="list-group-item">ASP.NET MVC</li>
-                    <li class="list-group-item">ASP.NET Core</li>
-                    <li class="list-group-item">Web API</li>
-                    <li class="list-group-item">Entity Framework</li>
-                </ul>
-            </div>
-            <div class="col-md-4 mt-3">
-                <h5 class="text-center">Database</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">SQL Server</li>
-                    <li class="list-group-item">MySQL</li>
-                    <li class="list-group-item">MongoDB</li>
-                </ul>
-            </div>
+      </section>
+      <section id="skills">
+        <h2>Skill Arsenal</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="devicon-csharp-plain"></i>
+            <h3>C#</h3>
+            <p>Backend APIs</p>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-angularjs-plain"></i>
+            <h3>Angular</h3>
+            <p>Dynamic frontends</p>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-react-plain"></i>
+            <h3>React</h3>
+            <p>Dynamic frontends</p>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-xamarin-plain"></i>
+            <h3>Xamarin</h3>
+            <p>Cross platform mobile applications</p>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-flutter-plain"></i>
+            <h3>Flutter</h3>
+            <p>Cross platform mobile applications</p>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-go-plain"></i>
+            <h3>Golang</h3>
+            <p>2D focused game development with Ebitengine</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Game Design</h3>
+            <p>Fun mechanics & stories</p>
+          </div>
         </div>
-    </section>
-
-    <section class="bg-light py-5" id="contact">
-        <div class="container">
-            <h2 class="text-center">Contact Me</h2>
-            <p class="lead text-center">Feel free to reach out to me
-                for any inquiries or collaboration opportunities at <a href="mailto:edwin.syarief@live.com">edwin.syarief@live.com</a>.</p>
+      </section>
+      <section id="additional-skills">
+        <h2>Additional Skills</h2>
+        <div class="additional-skills-grid">
+          <i class="devicon-amazonwebservices-plain-wordmark" title="AWS"></i>
+          <i class="devicon-azuresqldatabase-plain" title="Azure SQL"></i>
+          <i class="devicon-git-plain" title="Git"></i>
+          <i class="devicon-nodejs-plain" title="Node.js"></i>
+          <i class="devicon-mysql-plain" title="MySQL"></i>
+          <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
+          <i class="devicon-python-plain" title="Python"></i>
+          <i class="devicon-java-plain" title="Java"></i>
+          <i class="devicon-php-plain" title="PHP"></i>
+          <i class="devicon-typescript-plain" title="TypeScript"></i>
         </div>
-    </section>
-    <footer class="text-center py-3">
-        <p>&copy; 2023 Edwin Syarief. All rights reserved.</p>
+      </section>
+      <section id="projects">
+        <h2>Quest Log</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Asset Packer</h3>
+            <p>
+              Asset Packer is a powerful tool designed to streamline the packaging and management of game assets.
+              It provides a seamless workflow for developers, ensuring that assets are efficiently packed and ready for use in the game.
+            </p>
+            <a href="https://github.com/edwinsyarief/assetpacker">GitHub</a>
+          </div>
+          <div class="project-card">
+            <h3>Ebi Math</h3>
+            <p>
+              ebi-math is a versatile Go package designed for Ebitengine to assist with various mathematical and geometric computations often needed in game development,
+              graphics programming, or any 2D spatial calculations. This library provides a rich set of tools, including vector operations, transformation matrices, random number generation, and more.
+            </p>
+            <a href="https://github.com/edwinsyarief/ebi-math">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/edwinsyarief" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/edwinsyarief" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <p>
+        © 2025 Edwin Syarief |
+        <a href="mailto:edwin.syarief@gmail.com">Ping Me</a> | Let’s conquer
+        some code!
+      </p>
     </footer>
-</body>
 
+    <script>
+      // Dark Mode Toggle
+      function toggleDarkMode() {
+        document.body.classList.toggle("light");
+        const toggle = document.querySelector(".mode-toggle");
+        if (document.body.classList.contains("light")) {
+          toggle.classList.remove("fa-moon");
+          toggle.classList.add("fa-sun");
+        } else {
+          toggle.classList.remove("fa-sun");
+          toggle.classList.add("fa-moon");
+        }
+      }
+
+      // Scroll Animations
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      sections.forEach((section) => observer.observe(section));
+
+      // Particles Animation
+      const particlesContainer = document.getElementById("particles");
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        particlesContainer.appendChild(particle);
+      }
+    </script>
+  </body>
 </html>
