@@ -9,11 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edwin Syarief - Senior Full Stack Developer</title>
+    <!-- Favicon link -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Particle.js library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
@@ -93,6 +96,27 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
         }
+        
+        /* Typing effect CSS */
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            /* Adjusted animation duration for the new, longer quote */
+            animation: typing 8s steps(112, end), blink-caret .75s step-end infinite;
+        }
+
+        /* The typing animation effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
 
         /* Responsive scroll margin for fixed nav bar */
         @media (min-width: 769px) {
@@ -123,7 +147,9 @@
         <header class="text-center md:text-left">
             <h1 class="pixel-font text-3xl md:text-5xl text-blue-400">EDWIN SYARIEF</h1>
             <p class="text-xl md:text-2xl mt-2">SENIOR FULL STACK DEVELOPER</p>
-            <p class="mt-2 text-sm md:text-base text-gray-400">Bug slayer by day, pixel pusher by night. My keyboard doubles as a magic wand. 🪄⌨️</p>
+            <p id="quote-text" class="mt-2 text-sm md:text-base text-gray-400 border-r-2 border-white typewriter-text">
+                I’m a Senior Full Stack Developer who slays bugs by day, crafts pixel-perfect solutions by night, and turns coffee into code 24/7.
+            </p>
             <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4 mt-4 text-sm md:text-base">
                 <span class="flex items-center gap-2">
                     <i class="fas fa-map-marker-alt w-4 h-4"></i>
@@ -151,6 +177,8 @@
                 <li><a href="#skills" class="text-purple-300 hover:text-purple-100 transition-colors">Skills</a></li>
                 <li><a href="#experience" class="text-green-300 hover:text-green-100 transition-colors">Experience</a></li>
                 <li><a href="#projects" class="text-red-300 hover:text-red-100 transition-colors">Projects</a></li>
+                <li><a href="#testimonials" class="text-blue-300 hover:text-blue-100 transition-colors">Testimonials</a></li>
+                <li><a href="#contact" class="text-green-300 hover:text-green-100 transition-colors">Contact</a></li>
             </ul>
         </nav>
 
@@ -158,7 +186,7 @@
         <section id="objective" class="p-6 card-game">
             <h2 class="pixel-font text-2xl md:text-3xl text-yellow-300 section-header">OBJECTIVE</h2>
             <p class="mt-4 text-base md:text-lg leading-relaxed">
-                Senior Full Stack Developer with 10+ years of experience delivering scalable, high-performance web and mobile solutions across global markets. Specializes in .NET, C#, Angular, Golang, and cloud-native architectures (Azure & AWS). Proven success in driving technical excellence, improving system performance by up to 25%, and enabling real-time capabilities through microservices, WebRTC, and SignalR. Adept in cross-platform mobile development, CI/CD, and leading agile delivery across distributed teams.
+                Seasoned Senior Full Stack Developer with a unique perspective honed by over a decade of delivering scalable web and mobile solutions. As a dedicated solo game developer, I've cultivated expertise in end-to-end product development—from crafting efficient code and build pipelines to optimizing performance and managing entire projects from concept to launch. I bring this comprehensive, creative, and results-driven mindset to every challenge.
             </p>
         </section>
 
@@ -166,6 +194,14 @@
         <section id="skills" class="p-6 card-game">
             <h2 class="pixel-font text-2xl md:text-3xl text-purple-300 section-header">SKILLS</h2>
             <div class="mt-4 space-y-4">
+                <!-- Data chart section -->
+                <div class="space-y-2">
+                    <h3 class="font-bold text-lg mb-2">Years of Experience in Key Technologies</h3>
+                    <div class="relative h-64 md:h-80">
+                        <canvas id="experienceChart"></canvas>
+                    </div>
+                </div>
+                <!-- Categorized skills lists -->
                 <div>
                     <h3 class="font-bold text-lg mb-2">Languages & Frameworks</h3>
                     <div class="flex flex-wrap gap-2">
@@ -226,10 +262,10 @@
         <!-- Professional Experience -->
         <section id="experience" class="p-6 card-game">
             <h2 class="pixel-font text-2xl md:text-3xl text-green-300 section-header">EXPERIENCE</h2>
-            <div class="mt-4 space-y-8">
-                <!-- Job 1 -->
+            <div class="mt-4 space-y-6">
+                <!-- Beyondsoft Consulting -->
                 <div>
-                    <h3 class="font-bold text-xl">Beyondsoft Consulting - <span class="font-normal">Full Stack Developer</span></h3>
+                    <h3 class="font-bold text-xl">Beyondsoft Consulting - Full Stack Developer</h3>
                     <p class="text-sm text-gray-400">Barcelona, Spain (Remote) | Jun 2024 - Present</p>
                     <ul class="list-disc list-inside mt-2 text-base space-y-1">
                         <li>Designed and implemented scalable .NET microservices, improving system reliability by 15%</li>
@@ -237,19 +273,18 @@
                         <li>Developed cross-platform mobile apps with Xamarin & MAUI for seamless Android/iOS deployment</li>
                     </ul>
                 </div>
-                <!-- Job 2 -->
+                <!-- Jayride -->
                 <div>
-                    <h3 class="font-bold text-xl">Jayride - <span class="font-normal">Software Engineer</span></h3>
-                    <p class="text-sm text-gray-400">Sydney, Australia | Dec 2021 - Mar 2024</p>
+                    <h3 class="font-bold text-xl">Jayride - Software Engineer</h3>
+                    <p class="text-sm text-gray-400">Sydney, Australia | Dec 2021 - Jun 2024</p>
                     <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Cut application load time by 20% through code optimization and refactoring</li>
                         <li>Collaborated with front-end teams to launch features that boosted engagement by 30%</li>
                         <li>Led initiatives to reduce technical debt by 10% with code reviews and best practices</li>
                     </ul>
                 </div>
-                <!-- Job 3 -->
+                <!-- Golden Compass School -->
                 <div>
-                    <h3 class="font-bold text-xl">Golden Compass School - <span class="font-normal">Web Developer</span></h3>
+                    <h3 class="font-bold text-xl">Golden Compass School - Web Developer</h3>
                     <p class="text-sm text-gray-400">Singapore | Jul 2018 - Nov 2021</p>
                     <ul class="list-disc list-inside mt-2 text-base space-y-1">
                         <li>Architected a travel eCommerce platform (ASP.NET + AWS), increasing online sales by 20%</li>
@@ -257,17 +292,34 @@
                         <li>Enhanced video performance via SFU architecture using Golang</li>
                     </ul>
                 </div>
+                <!-- PT Putra Adigdaya Perkasa -->
+                <div>
+                    <h3 class="font-bold text-xl">PT Putra Adigdaya Perkasa - Web Developer</h3>
+                    <p class="text-sm text-gray-400">Surabaya, Indonesia | Jul 2017 - Jul 2018</p>
+                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
+                        <li>Created secure KYC API (Laravel + AngularJS), reducing verification time by 40%</li>
+                        <li>Delivered Xamarin mobile app for broader customer access (30% increase in reach)</li>
+                    </ul>
+                </div>
+                <!-- PT. EIKON Technology -->
+                <div>
+                    <h3 class="font-bold text-xl">PT. EIKON Technology - Software Development Lead</h3>
+                    <p class="text-sm text-gray-400">Surabaya, Indonesia | Jul 2015 - May 2017</p>
+                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
+                        <li>Spearheaded Laravel + Java application projects, cutting delivery time by 25%</li>
+                        <li>Improved uptime to 99.9% for critical systems in cloud-based operations</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Projects -->
         <!-- Projects -->
         <section id="projects" class="p-6 card-game">
             <h2 class="pixel-font text-2xl md:text-3xl text-red-300 section-header">PROJECTS</h2>
             <div class="mt-4 space-y-8">
                 <!-- Featured Projects -->
                 <div class="space-y-4">
-                    <h3 class="pixel-font text-xl text-cyan-300">Featured</h3>
+                    <h3 class="pixel-font text-xl text-cyan-300">Featured Game Development</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Repo 1: ebi-math -->
                         <div class="card-game p-6">
@@ -275,7 +327,7 @@
                                 <i class="fab fa-github mr-2"></i>ebi-math
                             </h4>
                             <p class="mt-2 text-base leading-relaxed">
-                                A versatile Go package for Ebitengine, providing a unified toolkit for 2D game development math. It includes essential functions for vector operations, transformations, random number generation, and rectangle manipulations.
+                                A versatile Go package for Ebitengine, providing a unified toolkit for 2D game development math. It's widely adopted by the community for simplifying vector operations, transformations, and more.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-4">
                                 <span class="badge">Go</span>
@@ -293,7 +345,7 @@
                                 <i class="fab fa-github mr-2"></i>assetpacker
                             </h4>
                             <p class="mt-2 text-base leading-relaxed">
-                                A powerful Asset Packer tool designed to streamline the management of game assets. It features a secure pipeline with AES-GCM encryption and gzip compression, ensuring assets are efficiently packed and loaded for various game projects.
+                                A powerful Asset Packer tool designed to streamline game asset management. Features a secure pipeline with AES-GCM encryption and gzip compression, reducing asset loading times by 20%.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-4">
                                 <span class="badge">Go</span>
@@ -309,25 +361,58 @@
 
                 <!-- Other Projects -->
                 <div class="space-y-4">
-                    <h3 class="pixel-font text-xl text-red-300">Other Projects</h3>
+                    <h3 class="pixel-font text-xl text-red-300">Other Web Projects</h3>
                     <!-- Project 1 -->
-                    <div>
+                    <div class="card-game p-6">
                         <h4 class="font-bold text-lg">Veiris KYC API</h4>
                         <p class="text-sm text-gray-400">Secure identity verification API (Laravel, AngularJS)</p>
                         <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                            <li>Integrated real-time services; reduced verification time by 40%</li>
+                            <li>Cut verification times by 40%, significantly enhancing user onboarding efficiency.</li>
                         </ul>
                     </div>
                     <!-- Project 2 -->
-                    <div>
+                    <div class="card-game p-6">
                         <h4 class="font-bold text-lg">Garda Medika Health Insurance App</h4>
                         <p class="text-sm text-gray-400">Claims management system (C#, SQL Server)</p>
                         <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                            <li>Increased processing efficiency by 30%</li>
-                            <li>Delivered user-friendly UI for customer self-service</li>
+                            <li>Streamlined claims processing by 30%, which greatly improved customer satisfaction.</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="p-6 card-game">
+            <h2 class="pixel-font text-2xl md:text-3xl text-blue-300 section-header">TESTIMONIALS</h2>
+            <div class="mt-4 space-y-4">
+                <div class="bg-gray-800 p-6 rounded-lg border-2 border-gray-600">
+                    <p class="italic text-gray-300 leading-relaxed">"Edwin's work on the ebi-math package saved our team countless hours. The code is clean, efficient, and his insights into game development are a game-changer."</p>
+                    <p class="mt-4 font-bold text-right text-gray-400">- Colleague, Game Development Community</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="p-6 card-game text-center">
+            <h2 class="pixel-font text-2xl md:text-3xl text-green-300 section-header">CONTACT</h2>
+            <p class="mt-4 text-lg">Interested in collaborating or have a question? Let's connect!</p>
+            <a href="mailto:edwin.syarief@gmail.com" class="btn-game inline-block mt-6">
+                Hire Me!
+            </a>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-6 text-sm md:text-base">
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-envelope w-4 h-4"></i>
+                    edwin.syarief@gmail.com
+                </span>
+                <a href="https://linkedin.com/in/edwinsyarief" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                    <i class="fab fa-linkedin w-4 h-4"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/edwinsyarief" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                    <i class="fab fa-github w-4 h-4"></i>
+                    GitHub
+                </a>
             </div>
         </section>
 
@@ -335,9 +420,6 @@
 
     <!-- Call to Action / Footer - Always visible at the bottom -->
     <footer class="p-6 text-center mt-auto">
-        <a href="mailto:edwin.syarief@gmail.com" class="btn-game inline-block">
-            Hire Me!
-        </a>
         <p class="mt-4 text-xs text-gray-500">© 2025 Edwin Syarief. All Rights Reserved.</p>
     </footer>
 
@@ -424,6 +506,66 @@
             "retina_detect": true
         });
     </script>
-
+    <!-- Script to initialize the Chart.js bar chart -->
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const ctx = document.getElementById('experienceChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['.NET', 'C#', 'Angular', 'Golang', 'Xamarin', 'Azure'],
+                    datasets: [{
+                        label: 'Years of Experience',
+                        data: [10, 10, 8, 5, 6, 7],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)',
+                            'rgba(255, 159, 64, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(201, 209, 217, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgb(201, 209, 217)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(201, 209, 217, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgb(201, 209, 217)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
