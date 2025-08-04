@@ -171,14 +171,23 @@
 
         <!-- Navigation Bar -->
         <nav class="sticky top-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 p-4 rounded-b-lg shadow-lg border-b-2 border-gray-600">
-            <ul class="flex flex-wrap justify-center gap-4 text-xs md:text-sm pixel-font">
-                <li><a href="#objective" class="text-yellow-300 hover:text-yellow-100 transition-colors">Objective</a></li>
-                <li><a href="#skills" class="text-purple-300 hover:text-purple-100 transition-colors">Skills</a></li>
-                <li><a href="#experience" class="text-green-300 hover:text-green-100 transition-colors">Experience</a></li>
-                <li><a href="#projects" class="text-red-300 hover:text-red-100 transition-colors">Projects</a></li>
-                <li><a href="#testimonials" class="text-blue-300 hover:text-blue-100 transition-colors">Testimonials</a></li>
-                <li><a href="#contact" class="text-green-300 hover:text-green-100 transition-colors">Contact</a></li>
-            </ul>
+            <!-- Hamburger menu button for mobile -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 absolute top-4 right-4">
+                <svg class="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Mobile and desktop menu container -->
+            <div id="mobile-menu" class="hidden md:block">
+                <ul class="flex flex-col md:flex-row justify-center items-center md:justify-center gap-4 text-xs md:text-sm pixel-font">
+                    <li><a href="#objective" class="text-yellow-300 hover:text-yellow-100 transition-colors">Objective</a></li>
+                    <li><a href="#skills" class="text-purple-300 hover:text-purple-100 transition-colors">Skills</a></li>
+                    <li><a href="#experience" class="text-green-300 hover:text-green-100 transition-colors">Experience</a></li>
+                    <li><a href="#projects" class="text-red-300 hover:text-red-100 transition-colors">Projects</a></li>
+                    <li><a href="#testimonials" class="text-blue-300 hover:text-blue-100 transition-colors">Testimonials</a></li>
+                    <li><a href="#contact" class="text-green-300 hover:text-green-100 transition-colors">Contact</a></li>
+                </ul>
+            </div>
         </nav>
 
         <!-- Professional Summary -->
@@ -415,8 +424,9 @@
         <p class="mt-4 text-xs text-gray-500">© 2025 Edwin Syarief. All Rights Reserved.</p>
     </footer>
 
-    <!-- Script to initialize particles.js -->
+    <!-- Script to initialize particles.js and handle mobile menu -->
     <script>
+        // Initialize particles.js
         particlesJS('particles-js', {
             "particles": {
                 "number": {
@@ -496,6 +506,26 @@
                 }
             },
             "retina_detect": true
+        });
+
+        // Mobile menu toggle logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only hide the menu if it's currently visible (on mobile)
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
         });
     </script>
 </body>
