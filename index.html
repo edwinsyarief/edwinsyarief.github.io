@@ -127,9 +127,8 @@
             .pixel-font {
                 font-size: 1.25rem;
             }
-            /* Adjusted scroll-margin-top for mobile to prevent header from being hidden */
             section[id] {
-                scroll-margin-top: 10rem;
+                scroll-margin-top: 6rem;
             }
             /* Override typewriter animation for mobile to prevent overflow */
             .typewriter-text {
@@ -177,35 +176,27 @@
             </div>
         </header>
 
-        <!-- Navigation Bar -->
-        <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm shadow-lg border-b-2 border-gray-600">
-            <!-- Main navigation container for mobile and desktop -->
-            <div class="max-w-4xl mx-auto p-4 flex justify-end md:justify-center items-center">
-                <!-- Hamburger menu button, only visible on mobile -->
-                <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-gray-400 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow-300 rounded-md">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- Navigation Bar - REFACTORED to fix the misaligned button -->
+        <nav class="sticky top-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 p-4 rounded-b-lg shadow-lg border-b-2 border-gray-600">
+            <!-- A wrapper for the mobile button to ensure it's always visible and correctly positioned -->
+            <div class="flex justify-end md:hidden">
+                <!-- Hamburger menu button for mobile, no longer absolutely positioned -->
+                <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300">
+                    <svg class="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <!-- Desktop navigation links, hidden on mobile -->
-                <ul id="desktop-menu" class="hidden md:flex justify-center flex-1 space-x-8 pixel-font">
+            </div>
+            <!-- Mobile and desktop menu container -->
+            <!-- The 'md:block' class ensures the menu is always visible on desktop, and 'hidden' handles the initial state on mobile -->
+            <div id="mobile-menu" class="hidden md:block">
+                <ul class="flex flex-col md:flex-row justify-center items-center gap-4 text-xs md:text-sm pixel-font mt-4 md:mt-0">
                     <li><a href="#objective" class="text-yellow-300 hover:text-yellow-100 transition-colors">Objective</a></li>
                     <li><a href="#skills" class="text-purple-300 hover:text-purple-100 transition-colors">Skills</a></li>
                     <li><a href="#experience" class="text-green-300 hover:text-green-100 transition-colors">Experience</a></li>
                     <li><a href="#projects" class="text-red-300 hover:text-red-100 transition-colors">Projects</a></li>
                     <li><a href="#testimonials" class="text-blue-300 hover:text-blue-100 transition-colors">Testimonials</a></li>
                     <li><a href="#contact" class="text-green-300 hover:text-green-100 transition-colors">Contact</a></li>
-                </ul>
-            </div>
-            <!-- Mobile menu links, hidden by default -->
-            <div id="mobile-menu" class="md:hidden hidden">
-                <ul class="flex flex-col items-center space-y-4 py-4 pixel-font">
-                    <li><a href="#objective" class="text-yellow-300 hover:text-yellow-100 transition-colors block">Objective</a></li>
-                    <li><a href="#skills" class="text-purple-300 hover:text-purple-100 transition-colors block">Skills</a></li>
-                    <li><a href="#experience" class="text-green-300 hover:text-green-100 transition-colors block">Experience</a></li>
-                    <li><a href="#projects" class="text-red-300 hover:text-red-100 transition-colors block">Projects</a></li>
-                    <li><a href="#testimonials" class="text-blue-300 hover:text-blue-100 transition-colors block">Testimonials</a></li>
-                    <li><a href="#contact" class="text-green-300 hover:text-green-100 transition-colors block">Contact</a></li>
                 </ul>
             </div>
         </nav>
