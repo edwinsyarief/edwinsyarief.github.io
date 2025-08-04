@@ -260,25 +260,72 @@
         </section>
 
         <!-- Projects -->
+        <!-- Projects -->
         <section id="projects" class="p-6 card-game">
             <h2 class="pixel-font text-2xl md:text-3xl text-red-300 section-header">PROJECTS</h2>
             <div class="mt-4 space-y-8">
-                <!-- Project 1 -->
-                <div>
-                    <h3 class="font-bold text-xl">Veiris KYC API</h3>
-                    <p class="text-sm text-gray-400">Secure identity verification API (Laravel, AngularJS)</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Integrated real-time services; reduced verification time by 40%</li>
-                    </ul>
+                <!-- Featured Projects -->
+                <div class="space-y-4">
+                    <h3 class="pixel-font text-xl text-cyan-300">Featured</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Repo 1: ebi-math -->
+                        <div class="card-game p-6">
+                            <h4 class="font-bold text-lg text-cyan-200">
+                                <i class="fab fa-github mr-2"></i>ebi-math
+                            </h4>
+                            <p class="mt-2 text-base leading-relaxed">
+                                A versatile Go package for Ebitengine, providing a unified toolkit for 2D game development math. It includes essential functions for vector operations, transformations, random number generation, and rectangle manipulations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="badge">Go</span>
+                                <span class="badge">Ebitengine</span>
+                                <span class="badge">Game Dev</span>
+                            </div>
+                            <a href="https://github.com/edwinsyarief/ebi-math" target="_blank" class="mt-4 inline-block text-cyan-300 hover:underline transition-colors">
+                                View on GitHub <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Repo 2: assetpacker -->
+                        <div class="card-game p-6">
+                            <h4 class="font-bold text-lg text-cyan-200">
+                                <i class="fab fa-github mr-2"></i>assetpacker
+                            </h4>
+                            <p class="mt-2 text-base leading-relaxed">
+                                A powerful Asset Packer tool designed to streamline the management of game assets. It features a secure pipeline with AES-GCM encryption and gzip compression, ensuring assets are efficiently packed and loaded for various game projects.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="badge">Go</span>
+                                <span class="badge">Tools</span>
+                                <span class="badge">Asset Management</span>
+                            </div>
+                            <a href="https://github.com/edwinsyarief/assetpacker" target="_blank" class="mt-4 inline-block text-cyan-300 hover:underline transition-colors">
+                                View on GitHub <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Project 2 -->
-                <div>
-                    <h3 class="font-bold text-xl">Garda Medika Health Insurance App</h3>
-                    <p class="text-sm text-gray-400">Claims management system (C#, SQL Server)</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Increased processing efficiency by 30%</li>
-                        <li>Delivered user-friendly UI for customer self-service</li>
-                    </ul>
+
+                <!-- Other Projects -->
+                <div class="space-y-4">
+                    <h3 class="pixel-font text-xl text-red-300">Other Projects</h3>
+                    <!-- Project 1 -->
+                    <div>
+                        <h4 class="font-bold text-lg">Veiris KYC API</h4>
+                        <p class="text-sm text-gray-400">Secure identity verification API (Laravel, AngularJS)</p>
+                        <ul class="list-disc list-inside mt-2 text-base space-y-1">
+                            <li>Integrated real-time services; reduced verification time by 40%</li>
+                        </ul>
+                    </div>
+                    <!-- Project 2 -->
+                    <div>
+                        <h4 class="font-bold text-lg">Garda Medika Health Insurance App</h4>
+                        <p class="text-sm text-gray-400">Claims management system (C#, SQL Server)</p>
+                        <ul class="list-disc list-inside mt-2 text-base space-y-1">
+                            <li>Increased processing efficiency by 30%</li>
+                            <li>Delivered user-friendly UI for customer self-service</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
