@@ -95,7 +95,7 @@
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
         }
         
-        /* Typing effect CSS */
+        /* Default styles for typewriter text (desktop) */
         .typewriter-text {
             display: inline-block;
             overflow: hidden;
@@ -130,6 +130,13 @@
             section[id] {
                 scroll-margin-top: 8rem;
             }
+            /* Override typewriter animation for mobile to prevent overflow */
+            .typewriter-text {
+                white-space: normal;
+                overflow: visible;
+                animation: none;
+                border-right: none;
+            }
         }
     </style>
 </head>
@@ -145,7 +152,7 @@
         <header class="text-center md:text-left">
             <h1 class="pixel-font text-3xl md:text-5xl text-blue-400">EDWIN SYARIEF</h1>
             <p class="text-xl md:text-2xl mt-2">SENIOR FULL STACK DEVELOPER</p>
-            <p id="quote-text" class="mt-2 text-sm md:text-base text-gray-400 border-r-2 border-white typewriter-text">
+            <p id="quote-text" class="mt-2 text-sm md:text-base text-gray-400 typewriter-text">
                 I’m a Senior Full Stack Developer who slays bugs by day, crafts pixel-perfect solutions by night, and turns coffee into code 24/7.
             </p>
             <!-- Responsive flex container for contact info -->
