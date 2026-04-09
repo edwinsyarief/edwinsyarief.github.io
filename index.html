@@ -8,340 +8,344 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edwin Syarief - Senior Full Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Edwin Syarief - Senior Software Engineer</title>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            padding: 30px;
+            margin: 0;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
+            justify-content: center;
+            box-sizing: border-box;
         }
-        .accent-purple {
-            color: #a855f7;
+        .container {
+            display: flex;
+            gap: 50px;
+            max-width: 1200px;
+            width: 100%;
         }
-        .section-header {
-            font-weight: 900;
-            text-transform: uppercase;
+        .left-col {
+            flex: 0 0 250px;
         }
-        .card {
-            background-color: #111111;
-            border-radius: 8px;
-            padding: 2rem;
+        .right-col {
+            flex: 1;
+            min-width: 0;
         }
-        .nav-link {
-            font-size: 2rem;
-            font-weight: 900;
-            text-transform: uppercase;
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .comment { color: #6a9955; }
+        .class-name { color: #4ec9b0; }
+        .method-name { color: #dcdcaa; }
+        .variable { color: #9cdcfe; }
+        .number { color: #b5cea8; }
+        .operator { color: #d4d4d4; }
+        
+        .block { margin-bottom: 20px; overflow-wrap: break-word; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+        
+        .multi-line-comment {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 10px;
+        }
+
+        .profile-img-container {
+            margin-bottom: 20px;
+        }
+        .profile-img-container > span {
+            color: #808080;
+        }
+        .profile-text {
+            width: 150px;
+            height: 150px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            border: 1px solid #4ec9b0;
+            margin: 5px 0;
+            background-color: #252526;
         }
-        .nav-link:hover {
-            color: #a855f7;
+        .profile-text span.initials {
+            color: #569cd6;
+            font-size: 72px;
+            font-weight: bold;
+            transform: rotate(-10deg);
+            user-select: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .skill-badge {
-            background-color: #222222;
-            color: #ffffff;
-            border-radius: 9999px;
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-        }
-        .experience-item {
-            border-bottom: 1px solid #333333;
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .experience-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-        .project-card {
-            background-color: #111111;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
+        
         @media (max-width: 768px) {
-            .nav-link {
-                font-size: 1.5rem;
+            body {
+                padding: 15px;
+                font-size: 12px;
             }
-            #skills {
-                text-align: center;
+            .container {
+                flex-direction: column;
+                gap: 20px;
             }
-            #skills h3 {
-                text-align: center;
+            .left-col {
+                flex: 1;
+                width: 100%;
             }
-            #skills .flex {
-                justify-content: center;
+            .right-col {
+                flex: 1;
+                width: 100%;
             }
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body>
 
-    <div class="max-w-6xl mx-auto space-y-12 flex-grow">
-
-        <!-- Hero Section -->
-        <header class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <div>
-                <h1 class="text-9xl md:text-[14rem] font-black tracking-wider accent-purple">ED</h1>
-                <h1 class="text-8xl md:text-[10rem] font-black tracking-wider">WIN</h1>
+<div class="container">
+    <div class="left-col">
+        <div class="profile-img-container">
+            <span class="operator">&lt;</span><span class="keyword">img</span><span class="operator">&gt;</span>
+            <div class="profile-text">
+                <span class="initials">ES</span>
             </div>
-            <nav class="space-y-4">
-                <a href="#objective" class="nav-link">Objective →</a>
-                <a href="#skills" class="nav-link">Skills →</a>
-                <a href="#experience" class="nav-link">Experience →</a>
-                <a href="#projects" class="nav-link">Projects →</a>
-                <a href="#testimonials" class="nav-link">Testimonials →</a>
-                <a href="#contact" class="nav-link">Contact →</a>
-            </nav>
-            <div class="space-y-2 text-sm md:text-base text-center md:text-right">
-                <h3 class="text-xl font-bold uppercase">Senior Fullstack Developer</h3>
-                <p>Slays bugs by day</p>
-                <p>Crafts pixel-perfect solutions by night</p>
+            <span class="operator">&lt;\</span><span class="keyword">img</span><span class="operator">&gt;</span>
+        </div>
+
+        <div class="block">
+            <span class="comment">// ==========================</span><br>
+            <span class="comment">// Core Skills</span><br>
+            <span class="comment">// ==========================</span><br>
+        </div>
+
+        <div class="block">
+            <span class="keyword">public enum</span> <span class="class-name">Backend</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                DotNet, DotNetCore,<br>
+                CSharp, AspNet,<br>
+                Golang, NodeJs,<br>
+                PHP, Java
             </div>
-        </header>
+            <span class="operator">}</span>
+        </div>
 
-        <!-- Objective -->
-        <section id="objective">
-            <h2 class="section-header text-3xl mb-4 text-center md:text-left">Objective</h2>
-            <p class="text-lg leading-relaxed text-center md:text-left">
-                Seasoned Senior Full Stack Developer with over a decade of delivering scalable web and mobile solutions. Expertise in end-to-end product development, from code to launch.
-            </p>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills">
-            <h2 class="section-header text-3xl mb-4 text-center md:text-left">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <h3 class="font-bold text-xl mb-2">Languages & Frameworks</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">.NET</span>
-                        <span class="skill-badge">C#</span>
-                        <span class="skill-badge">Golang</span>
-                        <span class="skill-badge">PHP</span>
-                        <span class="skill-badge">Node.js</span>
-                        <span class="skill-badge">Java</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-xl mb-2">Frontend</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Angular</span>
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Vue</span>
-                        <span class="skill-badge">TypeScript</span>
-                        <span class="skill-badge">HTML/CSS</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-xl mb-2">Mobile</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Xamarin</span>
-                        <span class="skill-badge">Flutter</span>
-                        <span class="skill-badge">MAUI</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-xl mb-2">Cloud & Infra</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Azure</span>
-                        <span class="skill-badge">AWS</span>
-                        <span class="skill-badge">Docker</span>
-                        <span class="skill-badge">CI/CD (GitHub Actions)</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-xl mb-2">Realtime Systems</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">SignalR</span>
-                        <span class="skill-badge">WebRTC</span>
-                        <span class="skill-badge">SFU</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-xl mb-2">Databases</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">SQL Server</span>
-                        <span class="skill-badge">MySQL</span>
-                        <span class="skill-badge">PostgreSQL</span>
-                    </div>
-                </div>
+        <div class="block">
+            <span class="keyword">public enum</span> <span class="class-name">FrontendMobile</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                Angular, React, Vue,<br>
+                TypeScript, HTML5, CSS3,<br>
+                Xamarin, DotNet_Maui,<br>
+                Flutter, ReactNative
             </div>
-        </section>
+            <span class="operator">}</span>
+        </div>
 
-        <!-- Experience -->
-        <section id="experience">
-            <h2 class="section-header text-3xl mb-4 text-center md:text-left">Experience</h2>
-            <div class="space-y-6">
-                <div class="experience-item">
-                    <h3 class="font-bold text-xl">Beyondsoft Consulting - Full Stack Developer</h3>
-                    <p class="text-sm text-gray-400">Barcelona, Spain (Remote) | Jun 2024 - Present</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Designed scalable .NET microservices, improving reliability</li>
-                        <li>Built Angular UIs, increasing client satisfaction</li>
-                        <li>Developed and deployed cross-platform mobile apps with Xamarin & MAUI for Android and iOS</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3 class="font-bold text-xl">Jayride - Software Engineer</h3>
-                    <p class="text-sm text-gray-400">Sydney, Australia | Dec 2021 - Jun 2024</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Reduced load time by 20% via code optimization and database tuning</li>
-                        <li>Collaborated with front-end teams to launch features that boosted engagement</li>
-                        <li>Led initiatives to reduce technical debt by 10% with code reviews and best practices</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3 class="font-bold text-xl">Golden Compass School - Software Engineer</h3>
-                    <p class="text-sm text-gray-400">Singapore | Jul 2018 - Nov 2021</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Architected a travel eCommerce platform (ASP.NET + AWS), increasing online sales</li>
-                        <li>Built a virtual classroom with WebRTC & React, improving student interaction</li>
-                        <li>Developed and maintained ETL pipelines to process and analyze student engagement data, providing key insights for platform improvement</li>
-                        <li>Optimized video performance by implementing SFU architecture with Golang</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3 class="font-bold text-xl">PT Putra Adigdaya Perkasa - Software Engineer</h3>
-                    <p class="text-sm text-gray-400">Surabaya, Indonesia | Jul 2017 - Jul 2018</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Created a secure KYC API (Laravel + AngularJS), reducing verification time by 40%</li>
-                        <li>Delivered a Xamarin mobile app, increasing customer reach</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3 class="font-bold text-xl">PT. EIKON Technology - Software Development Lead</h3>
-                    <p class="text-sm text-gray-400">Surabaya, Indonesia | Jul 2015 - May 2017</p>
-                    <ul class="list-disc list-inside mt-2 text-base space-y-1">
-                        <li>Spearheaded Laravel + Java application projects, improving delivery time</li>
-                        <li>Improved uptime to 99.9% for critical systems in cloud-based operations</li>
-                    </ul>
-                </div>
+        <div class="block">
+            <span class="keyword">public enum</span> <span class="class-name">CloudDevOps</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                AWS, Azure, Docker,<br>
+                GitHubActions, Jenkins,<br>
+                CI_CD, RabbitMQ, Kafka
             </div>
-        </section>
+            <span class="operator">}</span>
+        </div>
 
-        <!-- Projects -->
-        <section id="projects">
-            <h2 class="section-header text-3xl mb-4 text-center md:text-left">Projects</h2>
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-center md:text-left">Featured Game Development</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="project-card">
-                            <h4 class="font-bold text-lg mb-2"><i class="fab fa-github mr-2"></i>Teishoku</h4>
-                            <p class="text-base">Efficient ECS library for Go with archetype storage for performance.</p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="skill-badge">Go</span>
-                                <span class="skill-badge">Tools</span>
-                                <span class="skill-badge">Game Dev</span>
-                            </div>
-                            <a href="https://github.com/edwinsyarief/teishoku" target="_blank" class="mt-4 inline-block text-purple-300 hover:text-purple-500">View on GitHub →</a>
-                        </div>
-                        <div class="project-card">
-                            <h4 class="font-bold text-lg mb-2"><i class="fab fa-github mr-2"></i>Katsu2D</h4>
-                            <p class="text-base">Katsu2D is a high-performance 2D game framework built in Go with Ebitengine, featuring a fast ECS architecture and optimized rendering..</p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="skill-badge">Go</span>
-                                <span class="skill-badge">Ebitengine</span>
-                                <span class="skill-badge">Game Dev</span>
-                            </div>
-                            <a href="https://github.com/edwinsyarief/katsu2d" target="_blank" class="mt-4 inline-block text-purple-300 hover:text-purple-500">View on GitHub →</a>
-                        </div>
-                        <div class="project-card">
-                            <h4 class="font-bold text-lg mb-2"><i class="fab fa-github mr-2"></i>assetpacker</h4>
-                            <p class="text-base">Asset packer with AES-GCM encryption and gzip, reducing load times by 20%.</p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="skill-badge">Go</span>
-                                <span class="skill-badge">Tools</span>
-                                <span class="skill-badge">Asset Management</span>
-                            </div>
-                            <a href="https://github.com/edwinsyarief/assetpacker" target="_blank" class="mt-4 inline-block text-purple-300 hover:text-purple-500">View on GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-center md:text-left">Machine Learning Projects</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="project-card">
-                            <h4 class="font-bold text-lg mb-2"><i class="fab fa-github mr-2"></i>RL Inventory Optimizer</h4>
-                            <p class="text-base">A reinforcement learning (DQN) agent that learns optimal order quantities for inventory management, minimizing costs while handling stochastic demand and supply disruptions. Demonstrates a full ML pipeline from PyTorch prototyping to TensorFlow deployment.</p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="skill-badge">Python</span>
-                                <span class="skill-badge">PyTorch</span>
-                                <span class="skill-badge">TensorFlow</span>
-                                <span class="skill-badge">Flask</span>
-                                <span class="skill-badge">Docker</span>
-                                <span class="skill-badge">Reinforcement Learning</span>
-                            </div>
-                            <a href="https://github.com/edwinsyarief/rl-inventory-optimizer" target="_blank" class="mt-4 inline-block text-purple-300 hover:text-purple-500">View on GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-center md:text-left">Other Web Projects</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="project-card">
-                            <h4 class="font-bold text-lg mb-2">Veiris KYC API</h4>
-                            <p class="text-sm text-gray-400">Laravel, AngularJS</p>
-                            <ul class="list-disc list-inside mt-2 text-base">
-                                <li>Reduced verification times by 40%.</li>
-                            </ul>
-                        </div>
-                        <div class="project-card">
-                            <h4 class="font-bold text-lg mb-2">Garda Medika Health Insurance App</h4>
-                            <p class="text-sm text-gray-400">C#, SQL Server</p>
-                            <ul class="list-disc list-inside mt-2 text-base">
-                                <li>Streamlined claims by 30%.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <div class="block">
+            <span class="keyword">public enum</span> <span class="class-name">Links</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                <span class="comment">/// linkedin.com/in/edwinsyarief</span><br>
+                LinkedIn,<br>
+                <span class="comment">/// github.com/edwinsyarief</span><br>
+                GitHub
             </div>
-        </section>
+            <span class="operator">}</span>
+        </div>
 
-        <!-- Contact -->
-        <section id="contact" class="card text-center">
-            <h2 class="section-header text-3xl mb-4">Contact</h2>
-            <p class="text-lg mb-6">Interested in collaborating? Let's connect!</p>
-            <a href="mailto:edwin.syarief@gmail.com" class="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-500 transition">Hire Me →</a>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-6">
-                <span class="flex items-center gap-2">
-                    <i class="fas fa-envelope"></i>
-                    edwin.syarief@gmail.com
-                </span>
-                <a href="https://linkedin.com/in/edwinsyarief" target="_blank" class="flex items-center gap-2 hover:text-purple-500">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/edwinsyarief" target="_blank" class="flex items-center gap-2 hover:text-purple-500">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
+        <div class="block">
+            <span class="keyword">public enum</span> <span class="class-name">Languages</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                <span class="comment">/// Native</span><br>
+                Indonesia,<br><br>
+                <span class="comment">/// Professional Working Proficiency</span><br>
+                English
             </div>
-        </section>
-
+            <span class="operator">}</span>
+        </div>
     </div>
 
-    <footer class="p-6 text-center mt-auto text-gray-500 text-xs">
-        © 2025 Edwin Syarief. All Rights Reserved.
-    </footer>
+    <div class="right-col">
+        <div class="block comment multi-line-comment">/// &lt;summary&gt;
+/// Senior Software Engineer with 10+ years of experience designing and scaling cloud-native distributed systems across fintech, travel, and e-commerce domains.
+/// Expert in .NET Core, ASP.NET Core, RESTful APIs, microservices, and event-driven architecture on AWS and Azure.
+/// Open to remote international opportunities.
+/// &lt;\summary&gt;</div>
+
+        <div class="block">
+            <span class="keyword">public class</span> <span class="class-name">Information</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                <span class="keyword">public const string</span> <span class="variable">NAME</span> <span class="operator">=</span> <span class="string">"Edwin Syarief"</span>;<br><br>
+                <span class="keyword">public const string</span> <span class="variable">TITLE</span> <span class="operator">=</span> <span class="string">"Senior Software Engineer"</span>;<br><br>
+                <span class="keyword">public const string</span> <span class="variable">EMAIL</span> <span class="operator">=</span> <span class="string">"edwin.syarief@gmail.com"</span>;<br><br>
+                <span class="keyword">public static readonly string</span>[] <span class="variable">LOCATION</span> <span class="operator">=</span> { <span class="string">"Surabaya"</span>, <span class="string">"Indonesia"</span> };<br><br>
+                <span class="keyword">public const string</span> <span class="variable">AVAILABILITY</span> <span class="operator">=</span> <span class="string">"Immediately"</span>;<br><br>
+                <span class="keyword">public const string</span> <span class="variable">PREFERENCE</span> <span class="operator">=</span> <span class="string">"Remote / International"</span>;
+            </div>
+            <span class="operator">}</span>
+        </div>
+
+        <div class="block">
+            <span class="keyword">public class</span> <span class="class-name">University</span> <span class="operator">:</span> <span class="class-name">Education</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                <span class="keyword">public override void</span> <span class="method-name">Details</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">instanceName</span> <span class="operator">=</span> <span class="string">"Universitas Pembangunan Nasional Jawa Timur"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">degree</span> <span class="operator">=</span> <span class="string">"Bachelor of Information Technology"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="number">2003</span>, end: <span class="number">2007</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Surabaya, Indonesia"</span>;
+                </div>
+                <span class="operator">}</span>
+            </div>
+            <span class="operator">}</span>
+        </div>
+
+        <div class="block">
+            <span class="keyword">public static class</span> <span class="class-name">Experiences</span> <br>
+            <span class="operator">{</span><br>
+            <div class="indent-1">
+                <span class="comment">/// Beyondsoft Consulting</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">BeyondsoftConsulting</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"Full Stack Developer (.NET)"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Jun 2024"</span>, end: <span class="string">"Nov 2025"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Barcelona, Spain (Remote)"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Designed and implemented cloud-native .NET Core microservices and RESTful APIs, improving system reliability and scalability within a distributed systems environment.
+ - Built Angular-based frontends delivering improved user experience and client satisfaction.
+ - Developed and deployed cross-platform mobile apps (Xamarin & .NET MAUI) for Android and iOS.
+ - Collaborated in agile, cross-timezone teams to deliver production features.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+
+                <span class="comment">/// Jayride</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">Jayride</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"Software Engineer"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Dec 2021"</span>, end: <span class="string">"Mar 2024"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Sydney, Australia (Remote)"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Led MongoDB to SQL Server migration, ensuring data integrity and zero critical downtime.
+ - Optimized RESTful API performance and backend services, reducing application load time by 20%.
+ - Contributed to event-driven architecture initiatives using messaging systems.
+ - Delivered new customer-facing features in collaboration with frontend teams.
+ - Reduced technical debt by 10% through code reviews and architecture improvements.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+                
+                <span class="comment">/// Golden Compass School</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">GoldenCompassSchool</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"Software Engineer"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Jul 2018"</span>, end: <span class="string">"Nov 2021"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Singapore (Remote)"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Architected cloud-native distributed systems using ASP.NET Core and AWS to support global travel eCommerce workloads.
+ - Built scalable real-time virtual classroom using event-driven architecture, WebRTC, and React to improve student engagement.
+ - Developed ETL pipelines to analyze student behavior and platform usage.
+ - Improved video scalability by implementing SFU architecture with Golang.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+
+                <span class="comment">/// PT Putra Adigdaya Perkasa</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">PTPutraAdigdayaPerkasa</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"Software Engineer"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Jul 2017"</span>, end: <span class="string">"Jul 2018"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Surabaya, Indonesia"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Developed secure RESTful KYC API (Laravel + AngularJS), reducing verification time by 40%.
+ - Delivered Xamarin mobile application expanding customer reach and accessibility.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+
+                <span class="comment">/// PT EIKON Technology</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">PTEIKONTechnology</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"Software Development Lead"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Jul 2015"</span>, end: <span class="string">"May 2017"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Surabaya, Indonesia"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Led multiple Laravel and Java application projects, improving delivery speed and code quality.
+ - Achieved 99.9% uptime for cloud-based critical systems.
+ - Mentored developers and enforced engineering best practices.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+
+                <span class="comment">/// PT Indocyber Global Technology</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">PTIndocyberGlobalTechnology</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"IT Development Supervisor / Technical Trainer"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Nov 2012"</span>, end: <span class="string">"May 2015"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Surabaya, Indonesia"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Developed C# and SQL Server insurance portal improving premium calculation efficiency.
+ - Designed and delivered .NET training programs for internal engineers.
+ - Improved team capability through structured technical mentoring.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+
+                <span class="comment">/// Local Government Project</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">LocalGovernmentProject</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"IT Consultant"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Aug 2010"</span>, end: <span class="string">"Nov 2012"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Surabaya, Indonesia"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Built a tax information system improving government reporting workflows and data accuracy.
+ - Designed efficient data processing logic and reporting modules.
+ - Provided ongoing production support and system maintenance.
+*/</div>
+                </div>
+                <span class="operator">}</span><br><br>
+
+                <span class="comment">/// PT IT Core</span><br>
+                <span class="keyword">public static void</span> <span class="method-name">ITCore</span>()<br>
+                <span class="operator">{</span><br>
+                <div class="indent-2">
+                    <span class="keyword">var</span> <span class="variable">role</span> <span class="operator">=</span> <span class="string">"Senior Programmer"</span>;<br>
+                    <span class="keyword">var</span> <span class="variable">date</span> <span class="operator">=</span> <span class="method-name">Range</span>(start: <span class="string">"Jul 2007"</span>, end: <span class="string">"Jul 2010"</span>);<br>
+                    <span class="keyword">var</span> <span class="variable">location</span> <span class="operator">=</span> <span class="string">"Surabaya, Indonesia"</span>;<br>
+                    <div class="comment multi-line-comment">/*
+ - Developed financial trading application within a distributed systems architecture integrating real-time market data feeds.
+ - Implemented quote management and secure transaction processing.
+ - Ensured compliance with financial system requirements and security standards.
+*/</div>
+                </div>
+                <span class="operator">}</span>
+            </div>
+            <span class="operator">}</span>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
